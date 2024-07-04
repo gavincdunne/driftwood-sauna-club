@@ -1,14 +1,17 @@
-This is a Kotlin Multiplatform project targeting Android, iOS.
+# Driftwood Sauna Club Mobile App
 
-* `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - `commonMain` is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    `iosMain` would be the right folder for such calls.
-
-* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+Welcome to the Driftwood Sauna Club Mobile App repository! This app is built using Kotlin Multiplatform Mobile (KMM) to provide a seamless experience for both Android and iOS users.
 
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+## Introduction
+
+The Driftwood Sauna Club app is designed to enhance your sauna experience. Whether you're booking a session, tracking your sauna visits, or connecting with fellow sauna enthusiasts, this app has got you covered.
+
+## Features 
+
+- **Booking System:** Schedule and manage your sauna sessions with ease.
+- **Payments:** Pay for Sauna sessions with Stripe integration.
+- **Session Tracking:** Keep track of your past and upcoming sauna sessions.
+- **Community:** Connect with other sauna enthusiasts and share your experiences.
+- **Notifications:** Receive reminders for your upcoming sessions.
+- **Multiplatform Support:** Available on both Android and iOS.

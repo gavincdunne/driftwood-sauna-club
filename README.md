@@ -7,7 +7,7 @@ Welcome to the Driftwood Sauna Club Mobile App repository! This app is built usi
 
 The Driftwood Sauna Club app is designed to enhance your sauna experience. Whether you're booking a session, tracking your sauna visits, or connecting with fellow sauna enthusiasts, this app has got you covered.
 
-## Features 
+## Feature roadmap 
 
 - **Booking System:** Schedule and manage your sauna sessions with ease.
 - **Payments:** Pay for Sauna sessions with Stripe integration.

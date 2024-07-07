@@ -1,25 +1,25 @@
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import com.arkivanov.decompose.extensions.compose.jetbrains.stack.Children
+import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.slide
+import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.stackAnimation
+import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
+import navigation.RootComponent
 import org.koin.compose.KoinContext
-import org.koin.compose.viewmodel.koinViewModel
-import org.koin.core.annotation.KoinExperimentalAPI
 
-@OptIn(KoinExperimentalAPI::class)
 @Composable
-@Preview
-fun App() {
+fun App(root: RootComponent) {
     MaterialTheme {
         KoinContext {
-            NavHost(
-                navController = rememberNavController(),
-                startDestination = "home"
-            ) {
-                composable(route = "home") {
-                    val viewModel = koinViewModel<CheckoutViewModel>()
+            val childStack = root.childStack.subscribeAsState()
+
+            Children(
+                stack = childStack.value,
+                animation = stackAnimation(slide())
+            ) { child ->
+                when (val instance = child.instance) {
+                    is RootComponent.Child.Dashboard -> Dashboard(instance.component)
+                    is RootComponent.Child.Booking -> Booking(instance.component)
                 }
             }
         }
